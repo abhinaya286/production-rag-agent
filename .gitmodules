@@ -1,0 +1,3 @@
+[submodule "learning/simple-local-rag"]
+	path = learning/simple-local-rag
+	url = https://github.com/mrdbourke/simple-local-rag.git

@@ -1,0 +1,32 @@
+[project]
+name = "production-api"
+version = "0.1.0"
+description = "Production document-grounded RAG API using Gemini and PostgreSQL/pgvector"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.0",
+    "langchain-core>=1.0.0",
+    "langchain-google-genai>=4.0.0",
+    "langchain-postgres>=0.0.18",
+    "langchain-text-splitters>=1.0.0",
+    "psycopg[binary]>=3.2.0",
+    "pydantic-settings>=2.15.0",
+    "pypdf>=6.0.0",
+    "slowapi>=0.1.10",
+    "uvicorn[standard]>=0.34.0",
+]
+
+[project.scripts]
+production-api = "production_api.cli:serve"
+production-api-ingest = "production_api.cli:ingest"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.0.0",
+]
